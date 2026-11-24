@@ -1,0 +1,347 @@
+{
+  "_notice": "Curated starter reference set used by the citation and filing checks. It is NOT a substitute for the current official texts. Review and extend under change control before using results for GxP decisions.",
+  "kb_version": "2026.11-v1.1",
+  "ich_guidelines": {
+    "Q1": {
+      "title": "Stability testing of drug substances and drug products (consolidated revision)",
+      "status": "draft"
+    },
+    "Q1A": {
+      "title": "Stability testing of new drug substances and products",
+      "status": "final"
+    },
+    "Q1B": {
+      "title": "Photostability testing",
+      "status": "final"
+    },
+    "Q1C": {
+      "title": "Stability testing for new dosage forms",
+      "status": "final"
+    },
+    "Q1D": {
+      "title": "Bracketing and matrixing designs",
+      "status": "final"
+    },
+    "Q1E": {
+      "title": "Evaluation of stability data",
+      "status": "final"
+    },
+    "Q2": {
+      "title": "Validation of analytical procedures",
+      "status": "final"
+    },
+    "Q3A": {
+      "title": "Impurities in new drug substances",
+      "status": "final"
+    },
+    "Q3B": {
+      "title": "Impurities in new drug products",
+      "status": "final"
+    },
+    "Q3C": {
+      "title": "Residual solvents",
+      "status": "final"
+    },
+    "Q3D": {
+      "title": "Elemental impurities",
+      "status": "final"
+    },
+    "Q3E": {
+      "title": "Extractables and leachables",
+      "status": "draft"
+    },
+    "Q4B": {
+      "title": "Pharmacopoeial texts",
+      "status": "final"
+    },
+    "Q5A": {
+      "title": "Viral safety evaluation of biotechnology products",
+      "status": "final"
+    },
+    "Q5B": {
+      "title": "Expression construct analysis",
+      "status": "final"
+    },
+    "Q5C": {
+      "title": "Stability of biotechnological/biological products",
+      "status": "final"
+    },
+    "Q5D": {
+      "title": "Cell substrates",
+      "status": "final"
+    },
+    "Q5E": {
+      "title": "Comparability of biotechnological/biological products",
+      "status": "final"
+    },
+    "Q6A": {
+      "title": "Specifications: chemical substances",
+      "status": "final"
+    },
+    "Q6B": {
+      "title": "Specifications: biotechnological/biological products",
+      "status": "final"
+    },
+    "Q7": {
+      "title": "GMP for active pharmaceutical ingredients",
+      "status": "final"
+    },
+    "Q8": {
+      "title": "Pharmaceutical development",
+      "status": "final"
+    },
+    "Q9": {
+      "title": "Quality risk management",
+      "status": "final"
+    },
+    "Q10": {
+      "title": "Pharmaceutical quality system",
+      "status": "final"
+    },
+    "Q11": {
+      "title": "Development and manufacture of drug substances",
+      "status": "final"
+    },
+    "Q12": {
+      "title": "Pharmaceutical product lifecycle management",
+      "status": "final"
+    },
+    "Q13": {
+      "title": "Continuous manufacturing",
+      "status": "final"
+    },
+    "Q14": {
+      "title": "Analytical procedure development",
+      "status": "final"
+    },
+    "M4": {
+      "title": "Common Technical Document organisation",
+      "status": "final"
+    },
+    "M4Q": {
+      "title": "CTD quality",
+      "status": "final"
+    },
+    "M7": {
+      "title": "Mutagenic impurities",
+      "status": "final"
+    },
+    "M9": {
+      "title": "Biopharmaceutics classification system-based biowaivers",
+      "status": "final"
+    },
+    "M13A": {
+      "title": "Bioequivalence for immediate-release solid oral dosage forms",
+      "status": "final"
+    }
+  },
+  "cfr_title21_parts": {
+    "4": "Combination products cGMP",
+    "11": "Electronic records; electronic signatures",
+    "201": "Labeling",
+    "207": "Establishment registration and drug listing",
+    "210": "cGMP in manufacturing, processing, packing or holding of drugs; general",
+    "211": "cGMP for finished pharmaceuticals",
+    "212": "cGMP for PET drugs",
+    "314": "Applications for FDA approval to market a new drug (NDA/ANDA)",
+    "320": "Bioavailability and bioequivalence requirements",
+    "600": "Biological products: general",
+    "601": "Licensing",
+    "610": "General biological products standards",
+    "820": "Quality management system regulation (devices)"
+  },
+  "cfr_known_sections": {
+    "211": [
+      "211.22",
+      "211.25",
+      "211.42",
+      "211.46",
+      "211.63",
+      "211.67",
+      "211.68",
+      "211.84",
+      "211.100",
+      "211.101",
+      "211.103",
+      "211.110",
+      "211.113",
+      "211.137",
+      "211.160",
+      "211.165",
+      "211.166",
+      "211.180",
+      "211.186",
+      "211.188",
+      "211.192",
+      "211.194",
+      "211.198"
+    ],
+    "314": [
+      "314.3",
+      "314.50",
+      "314.54",
+      "314.70",
+      "314.71",
+      "314.81",
+      "314.92",
+      "314.94",
+      "314.95",
+      "314.97",
+      "314.99",
+      "314.105",
+      "314.125",
+      "314.127"
+    ],
+    "11": [
+      "11.10",
+      "11.50",
+      "11.70",
+      "11.100",
+      "11.200",
+      "11.300"
+    ]
+  },
+  "ctd_module3_sections": [
+    "3.2.S",
+    "3.2.S.1",
+    "3.2.S.2",
+    "3.2.S.3",
+    "3.2.S.4",
+    "3.2.S.5",
+    "3.2.S.6",
+    "3.2.S.7",
+    "3.2.P",
+    "3.2.P.1",
+    "3.2.P.2",
+    "3.2.P.3",
+    "3.2.P.3.1",
+    "3.2.P.3.2",
+    "3.2.P.3.3",
+    "3.2.P.3.4",
+    "3.2.P.3.5",
+    "3.2.P.4",
+    "3.2.P.5",
+    "3.2.P.5.1",
+    "3.2.P.5.2",
+    "3.2.P.5.3",
+    "3.2.P.5.4",
+    "3.2.P.5.5",
+    "3.2.P.5.6",
+    "3.2.P.6",
+    "3.2.P.7",
+    "3.2.P.8",
+    "3.2.P.8.1",
+    "3.2.P.8.2",
+    "3.2.P.8.3",
+    "3.2.A",
+    "3.2.A.1",
+    "3.2.A.2",
+    "3.2.A.3",
+    "3.2.R",
+    "3.3"
+  ],
+  "eu_gmp_annexes": {
+    "1": "Manufacture of sterile medicinal products (2022 revision)",
+    "2": "Biological active substances and medicinal products",
+    "3": "Radiopharmaceuticals",
+    "6": "Medicinal gases",
+    "8": "Sampling of starting and packaging materials",
+    "11": "Computerised systems",
+    "13": "Investigational medicinal products",
+    "15": "Qualification and validation",
+    "16": "Certification by a Qualified Person and batch release",
+    "17": "Real time release testing and parametric release",
+    "19": "Reference and retention samples",
+    "21": "Importation of medicinal products"
+  },
+  "eu_legislation": [
+    "Regulation (EC) No 1234/2008",
+    "Delegated Regulation (EU) 2024/1701",
+    "C/2025/5045",
+    "Directive 2001/83/EC",
+    "Regulation (EC) No 726/2004"
+  ],
+  "filing_categories": {
+    "FDA": {
+      "PAS": {
+        "label": "Prior Approval Supplement",
+        "basis": "21 CFR 314.70(b)",
+        "patterns": [
+          "\\bPAS\\b",
+          "prior[- ]approval supplement"
+        ]
+      },
+      "CBE-30": {
+        "label": "Changes Being Effected in 30 days",
+        "basis": "21 CFR 314.70(c)",
+        "patterns": [
+          "\\bCBE[- ]?30\\b",
+          "changes being effected in 30 days"
+        ]
+      },
+      "CBE-0": {
+        "label": "Changes Being Effected (immediate)",
+        "basis": "21 CFR 314.70(c)(6)",
+        "patterns": [
+          "\\bCBE[- ]?0\\b",
+          "\\bCBE\\b(?![- ]?30)"
+        ]
+      },
+      "AR": {
+        "label": "Annual Report",
+        "basis": "21 CFR 314.70(d)",
+        "patterns": [
+          "annual report"
+        ]
+      }
+    },
+    "EMA": {
+      "IA": {
+        "label": "Type IA variation",
+        "basis": "Regulation (EC) No 1234/2008",
+        "patterns": [
+          "type\\s*IA\\b(?!\\s*\\(?IN)"
+        ]
+      },
+      "IAIN": {
+        "label": "Type IA(IN) variation",
+        "basis": "Regulation (EC) No 1234/2008",
+        "patterns": [
+          "type\\s*IA\\s*\\(?IN\\)?"
+        ]
+      },
+      "IB": {
+        "label": "Type IB variation",
+        "basis": "Regulation (EC) No 1234/2008",
+        "patterns": [
+          "type\\s*IB\\b"
+        ]
+      },
+      "II": {
+        "label": "Type II variation",
+        "basis": "Regulation (EC) No 1234/2008",
+        "patterns": [
+          "type\\s*II\\b"
+        ]
+      },
+      "EXT": {
+        "label": "Extension application",
+        "basis": "Regulation (EC) No 1234/2008 Annex I",
+        "patterns": [
+          "extension application",
+          "line extension"
+        ]
+      }
+    }
+  },
+  "abstention_patterns": [
+    "cannot (?:verify|confirm|find)",
+    "unable to (?:verify|confirm|locate|find)",
+    "not aware of",
+    "could not (?:find|locate|verify)",
+    "no (?:such|record of)",
+    "does not appear to exist",
+    "i do not have (?:reliable )?information",
+    "please (?:check|confirm) the (?:exact )?(?:title|source|reference)"
+  ]
+}
