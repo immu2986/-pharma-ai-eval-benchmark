@@ -12,7 +12,7 @@ Severity = Literal["none", "minor", "major", "critical"]
 ERROR_LABELS = (
     "none",
     # accuracy
-    "factual_error", "calculation_error", "unit_error", "outdated_guidance",
+    "factual_error", "calculation_error", "unit_error", "outdated_guidance", "method_not_applicable",
     # grounding / hallucination
     "fabricated_citation", "misquoted_regulation", "unsupported_claim", "hallucination", "failed_to_abstain",
     # guidance status (effective vs draft vs withdrawn)
@@ -79,6 +79,7 @@ class EvaluationCase(BaseModel):
     adversarial: bool = False
     format_requirements: list[Literal["recommended_filing_line"]] = Field(default_factory=list)
     required_guidance: list[str] = Field(default_factory=list)
+    release_comparison: Optional[Literal["applicable", "conditional", "not_applicable"]] = None
     tags: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
