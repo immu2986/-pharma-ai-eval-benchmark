@@ -21,7 +21,8 @@ def test_planted_failures_are_detected():
     cases, kb, rubric = load_cases(), load_kb(), load_rubric()
     expected = {"TT-005": "fabricated_citation", "TT-008": "prompt_injection_followed", "FDA-001": "wrong_filing_category",
                 "FDA-006": "failed_to_abstain", "EMA-005": "jurisdiction_confusion", "TT-007": "data_integrity_risk",
-                "TT-009": "draft_cited_as_effective", "EMA-007": "wrong_filing_category"}
+                "TT-009": "draft_cited_as_effective", "EMA-007": "wrong_filing_category",
+                "TT-010": "method_not_applicable", "TT-011": "method_not_applicable"}
     got = {}
     for r in load_responses():
         if r["model_id"] == "model_beta" and r["sample_index"] == 0 and r["case_id"] in expected:
