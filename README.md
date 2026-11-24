@@ -1,6 +1,7 @@
 # Pharma AI Evaluation Benchmark
 
-![CI](../../actions/workflows/ci.yml/badge.svg) ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
+[![CI](https://github.com/immu2986/pharma-ai-eval-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/immu2986/pharma-ai-eval-benchmark/actions/workflows/ci.yml)
+
 
 An evaluation framework for AI models used in **pharmaceutical technology transfer** and **regulatory filing for drug products (USFDA and EU/EMA)**.
 
