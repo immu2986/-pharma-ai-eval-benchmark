@@ -4,7 +4,7 @@ Output: reports/auto_grades.jsonl  (one record per case x model x sample)
 """
 from __future__ import annotations
 
-from .graders import (check_abstention, check_citations, check_filing, check_forbidden, check_numeric,
+from .graders import (check_abstention, check_f2_applicability, check_citations, check_filing, check_forbidden, check_numeric,
                       check_required_points, context_support_rate)
 from .guidance import check_guidance, evaluation_as_of, load_registry
 from .utils import REPORTS, SEVERITY_RANK, load_cases, load_kb, load_responses, load_rubric, max_severity, risk_tier, write_jsonl
@@ -20,6 +20,8 @@ def grade_response(resp: dict, case: dict, kb: dict, rubric: dict, registry: dic
     citations, f = check_citations(text, kb)
     findings += f
     numeric, f = check_numeric(text, case)
+    findings += f
+    f2_app, f = check_f2_applicability(text, case)
     findings += f
     filing, f = check_filing(text, case, kb)
     findings += f
@@ -55,7 +57,7 @@ def grade_response(resp: dict, case: dict, kb: dict, rubric: dict, registry: dic
         "stated_confidence": resp.get("stated_confidence"),
         "coverage": round(coverage, 3), "auto_score": round(auto_score, 1),
         "auto_primary_error": primary, "auto_severity": severity,
-        "required_points": points, "numeric": numeric, "filing": filing, "abstention": abstention,
+        "required_points": points, "numeric": numeric, "filing": filing, "abstention": abstention, "f2_applicability": f2_app,
         "citations": citations,
         "guidance_citations": guidance_cites,
         "evaluation_as_of": as_of.isoformat(),
