@@ -1,0 +1,518 @@
+{
+  "_notice": "Guidance status registry. A document's status is computed AS OF the evaluation date: final documents become 'effective' on their effective_date; drafts stay drafts until a final version is registered. Only 'effective' documents may be presented as requirements. Drafts, consultations and adopted-but-not-yet-applicable texts must be labelled as such and paired with a way forward to adoption. Withdrawn or superseded documents may only be cited as historical. Maintain under change control; verified_on records the last check against the official source.",
+  "registry_version": "2026.11.24",
+  "label_window_chars": 160,
+  "draft_label_patterns": [
+    "\\bdraft\\b",
+    "consultation",
+    "\\bproposed\\b",
+    "not (yet )?final",
+    "not for implementation",
+    "step 2",
+    "under revision",
+    "for comment",
+    "not yet (in force|effective|applicable)"
+  ],
+  "pending_label_patterns": [
+    "not yet (in force|effective|applicable)",
+    "will apply",
+    "applicable from",
+    "applies from",
+    "transition",
+    "enter(s)? into force",
+    "from \\d{1,2} \\w+ 20\\d\\d"
+  ],
+  "historical_label_patterns": [
+    "withdrawn",
+    "superseded",
+    "replac(?:ed|ing|es)",
+    "no longer",
+    "historical",
+    "formerly",
+    "previous(?:ly)?",
+    "old (?:code|guideline|guidance)",
+    "obsolete",
+    "instead of"
+  ],
+  "documents": [
+    {
+      "id": "EU-VAR-GL-2025",
+      "title": "Commission Variations Guidelines C/2025/5045 (Q codes)",
+      "issuer": "European Commission",
+      "jurisdiction": "EU",
+      "doc_type": "classification guideline",
+      "status": "final",
+      "published": "2025-09-22",
+      "effective_date": "2026-01-15",
+      "patterns": [
+        "C/2025/5045",
+        "C\\(2025\\) ?5045",
+        "\\bQ\\.(?:I|II|III|IV|V)\\.(?:[a-h]\\.)?\\d"
+      ],
+      "url": "https://eur-lex.europa.eu/eli/C/2025/5045/oj/eng",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EU-VAR-GL-2013",
+      "title": "Commission classification guideline 2013/C 223/01 (B codes)",
+      "issuer": "European Commission",
+      "jurisdiction": "EU",
+      "doc_type": "classification guideline",
+      "status": "final",
+      "published": "2013-08-02",
+      "effective_date": "2013-08-04",
+      "superseded_on": "2026-01-15",
+      "superseded_by": "EU-VAR-GL-2025",
+      "patterns": [
+        "2013/C 223/01",
+        "\\bB\\.(?:I|II|III|IV|V)\\.[a-h]\\.\\d"
+      ],
+      "if_cited_as_current": {
+        "error": "outdated_guidance",
+        "severity": "major"
+      },
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=oj:JOC_2013_223_R_NS0001",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EU-VAR-REG-2024-1701",
+      "title": "Delegated Regulation (EU) 2024/1701 amending Regulation (EC) No 1234/2008",
+      "issuer": "European Commission",
+      "jurisdiction": "EU",
+      "doc_type": "regulation",
+      "status": "final",
+      "published": "2024-06-17",
+      "effective_date": "2025-01-01",
+      "patterns": [
+        "2024/1701"
+      ],
+      "url": "https://health.ec.europa.eu/medicinal-products/legal-framework-governing-medicinal-products-human-use-eu/pharmaceutical-strategy-europe_en",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EU-NPL",
+      "title": "New EU pharmaceutical legislation (directive and regulation)",
+      "issuer": "European Parliament and Council",
+      "jurisdiction": "EU",
+      "doc_type": "legislation",
+      "status": "pending_adoption",
+      "published": "2025-12-11",
+      "patterns": [
+        "new (EU )?pharmaceutical legislation",
+        "pharmaceutical (legislation )?reform",
+        "pharma package"
+      ],
+      "adoption_path": {
+        "stage": "Political agreement 11 Dec 2025",
+        "next_milestone": "Formal adoption and entry into force (expected 2026)",
+        "expected": "2026; national transposition to 2028",
+        "action": "Gap-assess variation, data-protection and shortage obligations; keep applying Directive 2001/83/EC and Regulation 726/2004 until the new acts apply."
+      },
+      "url": "https://www.ema.europa.eu/en/about-us/what-we-do/reform-eu-pharmaceutical-legislation",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-PEPTIDE-2021",
+      "title": "FDA guidance: ANDAs for Certain Highly Purified Synthetic Peptide Drug Products That Refer to Listed Drugs of rDNA Origin (May 2021)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "guidance",
+      "status": "final",
+      "published": "2021-05-01",
+      "effective_date": "2021-05-01",
+      "withdrawn_on": "2026-07-28",
+      "superseded_by": "FDA-PSG-PEPTIDES-2026",
+      "patterns": [
+        "highly purified synthetic peptide",
+        "synthetic peptide (ANDA )?guidance",
+        "2021 (FDA )?(synthetic )?peptide guidance"
+      ],
+      "if_cited_as_current": {
+        "error": "outdated_guidance",
+        "severity": "major"
+      },
+      "url": "https://fda.gov/drugs/drug-alerts-and-statements/fda-publishes-revised-draft-product-specific-guidances-certain-generic-peptide-products",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-PSG-PEPTIDES-2026",
+      "title": "FDA revised draft product-specific guidances for 17 peptide products (28 Jul 2026)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "product-specific guidance",
+      "status": "draft",
+      "published": "2026-07-28",
+      "patterns": [
+        "17 (revised )?(draft )?(peptide )?(product[- ]specific guidances|PSGs)"
+      ],
+      "adoption_path": {
+        "stage": "Revised draft PSGs (docket FDA-2007-D-0369)",
+        "next_milestone": "FDA finalises after considering docket comments; replacement for the withdrawn 2021 peptide guidance is on the CDER 2026 guidance agenda",
+        "expected": "Not dated by FDA",
+        "action": "Treat as FDA's current thinking for ANDA development; confirm approach in a pre-ANDA meeting or controlled correspondence; monitor the PSG database for final versions."
+      },
+      "url": "https://fda.gov/drugs/drug-alerts-and-statements/fda-publishes-revised-draft-product-specific-guidances-certain-generic-peptide-products",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-PSG-TIRZEPATIDE",
+      "title": "FDA draft PSG on tirzepatide (Zepbound NDA 217806; revised Jul 2026)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "product-specific guidance",
+      "status": "draft",
+      "published": "2026-07-28",
+      "patterns": [
+        "(product[- ]specific guidance|PSG)[^.\\n]{0,80}tirzepatide",
+        "tirzepatide[^.\\n]{0,80}(product[- ]specific guidance|PSG)",
+        "PSG_217806",
+        "PSG_215866"
+      ],
+      "adoption_path": {
+        "stage": "Draft PSG, recommended Nov 2025, revised Jul 2026",
+        "next_milestone": "Final PSG after docket comments",
+        "expected": "Not dated by FDA",
+        "action": "Design characterisation, impurity and device programmes to the draft; confirm in a pre-ANDA meeting; re-assess when finalised."
+      },
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/PSG_217806.pdf",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-PSG-LIRAGLUTIDE",
+      "title": "FDA draft PSGs on liraglutide (Victoza NDA 022341; Saxenda NDA 206321)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "product-specific guidance",
+      "status": "draft",
+      "published": "2026-07-28",
+      "patterns": [
+        "(product[- ]specific guidance|PSG)[^.\\n]{0,80}liraglutide",
+        "liraglutide[^.\\n]{0,80}(product[- ]specific guidance|PSG)",
+        "PSG_022341",
+        "PSG_206321"
+      ],
+      "adoption_path": {
+        "stage": "Draft PSG, revised in the Jul 2026 peptide batch",
+        "next_milestone": "Final PSG after docket comments",
+        "expected": "Not dated by FDA",
+        "action": "Follow as current thinking; confirm via pre-ANDA interaction."
+      },
+      "url": "https://www.accessdata.fda.gov/drugsatfda_docs/psg/PSG_022341.pdf",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-PSG-SEMAGLUTIDE",
+      "title": "FDA draft PSGs on semaglutide injection (Ozempic NDA 209637; Wegovy NDA 215256)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "product-specific guidance",
+      "status": "draft",
+      "published": "2026-07-28",
+      "patterns": [
+        "(product[- ]specific guidance|PSG)[^.\\n]{0,80}semaglutide",
+        "semaglutide[^.\\n]{0,80}(product[- ]specific guidance|PSG)"
+      ],
+      "adoption_path": {
+        "stage": "Draft PSG, revised in the Jul 2026 peptide batch",
+        "next_milestone": "Final PSG after docket comments",
+        "expected": "Not dated by FDA",
+        "action": "Follow as current thinking; confirm via pre-ANDA interaction."
+      },
+      "url": "https://fda.gov/drugs/drug-alerts-and-statements/fda-publishes-revised-draft-product-specific-guidances-certain-generic-peptide-products",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EMA-PSBG-LIRAGLUTIDE",
+      "title": "EMA liraglutide 6 mg/mL pre-filled pen product-specific bioequivalence guidance",
+      "issuer": "EMA",
+      "jurisdiction": "EMA",
+      "doc_type": "product-specific guidance",
+      "status": "draft",
+      "published": "2026-04-30",
+      "patterns": [
+        "(EMA|EU|CHMP)[^.\\n]{0,80}(product[- ]specific bioequivalence guidance|PSBG)[^.\\n]{0,60}liraglutide",
+        "liraglutide[^.\\n]{0,80}(product[- ]specific bioequivalence guidance|PSBG)"
+      ],
+      "adoption_path": {
+        "stage": "Draft released for public consultation",
+        "next_milestone": "Adoption by CHMP after consultation",
+        "expected": "Not dated by EMA",
+        "action": "Use for EU generic BE planning; seek EMA/national scientific advice if deviating."
+      },
+      "url": "https://www.ema.europa.eu/en/liraglutide-6-mg-ml-solution-injection-prefilled-pen-product-specific-bioequivalence-guidance",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EMA-PSBG-SEMAGLUTIDE",
+      "title": "EMA semaglutide pre-filled pen product-specific bioequivalence guidance",
+      "issuer": "EMA",
+      "jurisdiction": "EMA",
+      "doc_type": "product-specific guidance",
+      "status": "draft",
+      "published": "2026-05-11",
+      "patterns": [
+        "(EMA|EU|CHMP)[^.\\n]{0,80}(product[- ]specific bioequivalence guidance|PSBG)[^.\\n]{0,60}semaglutide",
+        "semaglutide[^.\\n]{0,80}(product[- ]specific bioequivalence guidance|PSBG)"
+      ],
+      "adoption_path": {
+        "stage": "Adopted by CHMP for release for consultation (11 May 2026)",
+        "next_milestone": "Final adoption by CHMP",
+        "expected": "Not dated by EMA",
+        "action": "Use for EU generic BE planning; monitor for final version."
+      },
+      "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/semaglutide-flextouch-solution-injection-pre-filled-pen-product-specific-bioequivalence-guidance-various-strengths_en.pdf",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-BIOSIM-CES-2025",
+      "title": "FDA draft guidance: Scientific Considerations in Demonstrating Biosimilarity - Updated Recommendations for Assessing the Need for Comparative Efficacy Studies (Oct 2025)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "guidance",
+      "status": "draft",
+      "published": "2025-10-29",
+      "patterns": [
+        "Need for Comparative Efficacy Studies",
+        "comparative efficacy stud(?:y|ies)[^.\\n]{0,120}(guidance|recommendation)",
+        "(guidance|recommendation)[^.\\n]{0,120}comparative efficacy stud(?:y|ies)"
+      ],
+      "adoption_path": {
+        "stage": "Draft for comment (docket FDA-2011-D-0605)",
+        "next_milestone": "Final guidance",
+        "expected": "FDA indicated intent to finalise; no date fixed",
+        "action": "Plan an analytics- and PK-led programme but agree the need for a CES with FDA in a Biosimilar Product Development meeting until the guidance is final."
+      },
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/scientific-considerations-demonstrating-biosimilarity-reference-product-updated-recommendations",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EMA-BIOSIM-RP-2026",
+      "title": "EMA reflection paper on a tailored clinical approach in biosimilar development",
+      "issuer": "EMA",
+      "jurisdiction": "EMA",
+      "doc_type": "reflection paper",
+      "status": "final",
+      "published": "2026-03-16",
+      "effective_date": "2026-03-16",
+      "patterns": [
+        "tailored clinical approach"
+      ],
+      "url": "https://www.ema.europa.eu/en/reflection-paper-tailored-clinical-approach-biosimilar-development",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "HC-BIOSIM-2026",
+      "title": "Health Canada Guidance on Information and Submission Requirements for Biosimilar Biologic Drugs (revised)",
+      "issuer": "Health Canada",
+      "jurisdiction": "HC",
+      "doc_type": "guidance",
+      "status": "final",
+      "published": "2026-05-19",
+      "effective_date": "2026-05-19",
+      "patterns": [
+        "Health Canada[^.\\n]{0,80}biosimilar[^.\\n]{0,40}guidance"
+      ],
+      "url": "https://www.canada.ca/en/health-canada/services/drugs-health-products/biologics-radiopharmaceuticals-genetic-therapies/applications-submissions/guidance-documents/information-submission-requirements-biosimilar-biologic-drugs/summary-changes.html",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "ICH-Q1-CONSOLIDATED",
+      "title": "ICH Q1 Stability Testing of Drug Substances and Drug Products (consolidated revision replacing Q1A-F and Q5C)",
+      "issuer": "ICH",
+      "jurisdiction": "ICH",
+      "doc_type": "guideline",
+      "status": "draft",
+      "published": "2025-04-11",
+      "patterns": [
+        "ICH Q1(?![A-F0-9])"
+      ],
+      "adoption_path": {
+        "stage": "Step 2 endorsed Apr 2025; consultation closed",
+        "next_milestone": "Step 4 adoption, then regional implementation (Step 5) by each regulator",
+        "expected": "Step 4 targeted Nov 2026 per ICH work plan",
+        "action": "Keep applying Q1A(R2)-Q1E and Q5C until regionally implemented; gap-assess protocols against the draft now."
+      },
+      "url": "https://database.ich.org/sites/default/files/ICH52_Q1_EWG_WorkPlan_2026_0318.pdf",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "ICH-Q1A-R2",
+      "title": "ICH Q1A(R2) Stability testing of new drug substances and products",
+      "issuer": "ICH",
+      "jurisdiction": "ICH",
+      "doc_type": "guideline",
+      "status": "final",
+      "published": "2003-02-06",
+      "effective_date": "2003-02-06",
+      "patterns": [
+        "Q1A ?\\(R2\\)",
+        "\\bQ1A\\b"
+      ],
+      "url": "https://database.ich.org/sites/default/files/Q1A%28R2%29%20Guideline.pdf",
+      "verified_on": "2026-11-24",
+      "date_note": "ICH Step 4 date"
+    },
+    {
+      "id": "ICH-Q5C",
+      "title": "ICH Q5C Stability testing of biotechnological/biological products",
+      "issuer": "ICH",
+      "jurisdiction": "ICH",
+      "doc_type": "guideline",
+      "status": "final",
+      "published": "1995-11-30",
+      "effective_date": "1995-11-30",
+      "patterns": [
+        "\\bQ5C\\b"
+      ],
+      "url": "https://database.ich.org/",
+      "verified_on": "2026-11-24",
+      "date_note": "ICH Step 4 date"
+    },
+    {
+      "id": "ICH-M4Q-R2",
+      "title": "ICH M4Q(R2) CTD Quality",
+      "issuer": "ICH",
+      "jurisdiction": "ICH",
+      "doc_type": "guideline",
+      "status": "draft",
+      "published": "2025-05",
+      "patterns": [
+        "M4Q ?\\(R2\\)"
+      ],
+      "adoption_path": {
+        "stage": "Step 2 endorsed May 2025",
+        "next_milestone": "Step 4 adoption",
+        "expected": "Not dated",
+        "action": "Author dossiers to M4Q(R1); plan template migration."
+      },
+      "url": "https://www.swissmedic.ch/swissmedic/en/home/news/mitteilungen/treffen-ich-madrid.html",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "ICH-Q3E",
+      "title": "ICH Q3E Extractables and Leachables",
+      "issuer": "ICH",
+      "jurisdiction": "ICH",
+      "doc_type": "guideline",
+      "status": "draft",
+      "published": "2025 (Step 2)",
+      "patterns": [
+        "\\bQ3E\\b"
+      ],
+      "adoption_path": {
+        "stage": "Step 2 draft under consultation",
+        "next_milestone": "Step 4 adoption",
+        "expected": "Not dated",
+        "action": "Use USP <1663>/<1664> and current regional expectations; align E&L programmes with the draft."
+      },
+      "url": "https://www.pmda.go.jp/files/000281841.pdf",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-QMSR",
+      "title": "FDA Quality Management System Regulation (21 CFR 820 incorporating ISO 13485:2016)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "regulation",
+      "status": "final",
+      "published": "2024-02-02",
+      "effective_date": "2026-02-02",
+      "supersedes": "FDA-QSR",
+      "patterns": [
+        "\\bQMSR\\b",
+        "Quality Management System Regulation"
+      ],
+      "url": "https://www.fda.gov/medical-devices/postmarket-requirements-devices/quality-system-qs-regulationmedical-device-good-manufacturing-practices",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-QSR",
+      "title": "FDA Quality System Regulation (legacy 21 CFR 820)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "regulation",
+      "status": "final",
+      "published": "1996-10-07",
+      "effective_date": "1997-06-01",
+      "superseded_on": "2026-02-02",
+      "superseded_by": "FDA-QMSR",
+      "patterns": [
+        "Quality System Regulation(?! Amendments)",
+        "\\bQSR\\b",
+        "\\bQSIT\\b"
+      ],
+      "if_cited_as_current": {
+        "error": "outdated_guidance",
+        "severity": "major"
+      },
+      "url": "https://www.fda.gov/medical-devices/quality-system-qs-regulationmedical-device-good-manufacturing-practices/quality-management-system-regulation-final-rule-amending-quality-system-regulation-frequently-asked",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "EU-GMP-ANNEX1-2022",
+      "title": "EU GMP Annex 1 Manufacture of Sterile Medicinal Products (2022)",
+      "issuer": "European Commission",
+      "jurisdiction": "EU",
+      "doc_type": "GMP guideline",
+      "status": "final",
+      "published": "2022-08-25",
+      "effective_date": "2023-08-25",
+      "patterns": [
+        "Annex 1\\b"
+      ],
+      "url": "https://health.ec.europa.eu/medicinal-products/eudralex/eudralex-volume-4_en",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-PV-2011",
+      "title": "FDA Process Validation: General Principles and Practices (2011)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "guidance",
+      "status": "final",
+      "published": "2011-01-24",
+      "effective_date": "2011-01-24",
+      "patterns": [
+        "General Principles and Practices",
+        "(2011|FDA) process validation guidance"
+      ],
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/process-validation-general-principles-and-practices",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-CMC-BIOLOGICS-2021",
+      "title": "FDA CMC Changes to an Approved Application: Certain Biological Products (June 2021)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "guidance",
+      "status": "final",
+      "published": "2021-06-21",
+      "effective_date": "2021-06-21",
+      "patterns": [
+        "Changes to an Approved Application: Certain Biological Products"
+      ],
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/chemistry-manufacturing-and-controls-changes-approved-application-certain-biological-products",
+      "verified_on": "2026-11-24"
+    },
+    {
+      "id": "FDA-AI-CREDIBILITY-2025",
+      "title": "FDA draft guidance: Considerations for the Use of AI to Support Regulatory Decision-Making for Drug and Biological Products (Jan 2025)",
+      "issuer": "FDA",
+      "jurisdiction": "FDA",
+      "doc_type": "guidance",
+      "status": "draft",
+      "published": "2025-01",
+      "patterns": [
+        "AI (credibility|to Support Regulatory Decision)"
+      ],
+      "adoption_path": {
+        "stage": "Draft for comment",
+        "next_milestone": "Final guidance",
+        "expected": "Not dated",
+        "action": "Apply its risk-based credibility framework as good practice; document context of use and model risk."
+      },
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents",
+      "verified_on": "2026-11-24"
+    }
+  ]
+}
