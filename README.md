@@ -1,7 +1,6 @@
 # Pharma AI Evaluation Benchmark
 
-[![CI](https://github.com/immu2986/pharma-ai-eval-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/immu2986/pharma-ai-eval-benchmark/actions/workflows/ci.yml)
-
+[![CI](https://github.com/immu2986/pharma-ai-eval-benchmark/actions/workflows/ci.yml/badge.svg)](https://github.com/immu2986/pharma-ai-eval-benchmark/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.10%2B-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 An evaluation framework for AI models used in **pharmaceutical technology transfer** and **regulatory filing for drug products (USFDA and EU/EMA)**.
 
@@ -82,7 +81,7 @@ annotations/ ┘                    │
 
 ```
 data/
-  cases.jsonl                    24 cases: 9 tech transfer, 8 USFDA, 7 EU/EMA
+  cases.jsonl                    26 cases: 11 tech transfer, 8 USFDA, 7 EU/EMA
   responses/model_*.jsonl        candidate responses (k=3 samples on 4 cases for consistency)
   annotations/evaluator_*.jsonl  SME annotations (3 evaluators)
   adjudications.jsonl            signed adjudication records
@@ -106,7 +105,7 @@ src/pharmaeval/
   cli.py            command-line interface
 scripts/            dataset builders and one-command pipeline runners
 docs/               METHODOLOGY, ERROR_TAXONOMY, ANNOTATION_GUIDELINES
-tests/              53 pytest tests
+tests/              60 pytest tests
 ```
 
 ## Maintaining the guidance registry
@@ -140,6 +139,7 @@ Then collect SME annotations into `data/annotations/` and run `python -m pharmae
 
 ## Version history
 
+- **1.2.0 (24 Nov 2026):** f2 applicability rule: f2 flagged as not applicable for solutions, mAbs, biosimilars and peptide solutions, and caveats required for injectable suspensions and long-acting injectables; 2 new cases (TT-010, TT-011).
 - **1.1.0 (24 Nov 2026):** guidance-status engine and watchlist; release gate requires zero guidance-status errors; 4 new cases (tirzepatide PSG, biosimilar CES draft, EU Q-code site change, ICH Q1 draft); EMA cases moved to Commission Variations Guidelines C/2025/5045; FDA 2021 synthetic peptide guidance marked withdrawn (28 Jul 2026).
 - **1.0.0:** initial release.
 
