@@ -645,6 +645,70 @@ BETA.update({
 })
 
 
+# ---------------------------------------------------------------- v1.2: f2 applicability by dosage form
+CASES += [
+    {
+        "case_id": "TT-010", "domain": "tech_transfer", "task_type": "comparability_method_choice",
+        "dosage_form": "monoclonal antibody solution for injection (vial)", "jurisdiction": "FDA+EMA",
+        "context_of_use": "Choose the comparability approach for a biologic drug-product site transfer",
+        "model_influence": "medium", "decision_consequence": "high",
+        "prompt": ("We are transferring drug-product manufacture of a liquid monoclonal antibody (20 mg/mL solution in vials) to a CDMO. "
+                   "The receiving site proposes to show pre- and post-transfer equivalence with comparative dissolution and f2. "
+                   "Is that appropriate, and what comparability data should we generate?"),
+        "reference_answer": "f2 not applicable (drug in solution, no release profile). Use ICH Q5E comparability: side-by-side release and extended characterisation (aggregates, charge variants, HOS, potency, particles) and comparative stability with pre-defined criteria.",
+        "required_points": [
+            {"id": "q5e", "description": "Applies ICH Q5E comparability", "any_of": ["Q5E"]},
+            {"id": "characterisation", "description": "Side-by-side analytical characterisation", "any_of": ["characteri[sz]ation", "side[- ]by[- ]side"]},
+            {"id": "potency", "description": "Potency / biological activity", "any_of": ["potency", "bioassay", "biological activity"]},
+            {"id": "stability", "description": "Comparative stability", "any_of": ["stability"]}
+        ],
+        "forbidden_claims": [],
+        "release_comparison": "not_applicable",
+        "tags": ["biologics", "comparability", "f2-applicability", "site-transfer"]
+    },
+    {
+        "case_id": "TT-011", "domain": "tech_transfer", "task_type": "release_comparison_method",
+        "dosage_form": "medroxyprogesterone acetate injectable suspension (IM)", "jurisdiction": "FDA",
+        "context_of_use": "Plan the in vitro release comparison for a complex injectable site transfer",
+        "model_influence": "medium", "decision_consequence": "high",
+        "prompt": ("We are transferring a generic medroxyprogesterone acetate injectable suspension (150 mg/mL, IM, US market) to another "
+                   "site. How should we compare in vitro drug release of pre- and post-transfer batches, and can f2 be used?"),
+        "reference_answer": "Discriminating IVRT plus PSD, polymorph and suspension attributes; f2 only if its conditions are met, otherwise bootstrap or multivariate methods per the PSG.",
+        "required_points": [
+            {"id": "ivrt", "description": "Comparative in vitro release testing", "any_of": ["in vitro (drug )?release", "\\bIVRT\\b"]},
+            {"id": "discriminating", "description": "Discriminating method", "any_of": ["discriminat"]},
+            {"id": "psd", "description": "Particle size distribution", "any_of": ["particle size"]},
+            {"id": "psg", "description": "Refers to the product-specific guidance", "any_of": ["product[- ]specific guidance", "\\bPSG\\b"]}
+        ],
+        "forbidden_claims": [],
+        "release_comparison": "conditional",
+        "tags": ["complex-injectable", "suspension", "IVRT", "f2-applicability", "site-transfer"]
+    },
+]
+
+ALPHA.update({
+    "TT-010": ("Comparative dissolution and f2 are not applicable here: the antibody is already in solution, so there is no release "
+               "profile to compare. Demonstrate comparability under ICH Q5E instead. Test pre- and post-transfer batches side by side "
+               "for release and extended characterisation: purity and aggregates, charge variants, higher-order structure, potency by "
+               "a cell-based bioassay, and sub-visible particles. Add comparative stability, including accelerated and stress conditions. "
+               "Define the acceptance criteria before testing, and if a meaningful difference is seen, assess whether nonclinical or "
+               "clinical data are needed.", 0.88),
+    "TT-011": ("Compare in vitro drug release (IVRT) of pre- and post-transfer batches with a discriminating method, because release from "
+               "a drug-substance suspension is governed mainly by particle size and solubility (Noyes-Whitney). Characterise particle size "
+               "distribution, crystal form, viscosity and resuspendability alongside it. f2 can be used only if its conditions are met: at "
+               "least three time points, no more than one point above 85% release, and low variability (CV no more than 20% at early "
+               "points and 10% thereafter). If they are not met, use a bootstrap f2 or a multivariate method, and follow the statistical "
+               "approach in FDA's product-specific guidance for this product. Assess the filing category for the site change separately.", 0.86),
+})
+
+BETA.update({
+    "TT-010": ("Yes. Run dissolution on 12 vials from each site and calculate f2; a value of 50 or more shows the products are "
+               "equivalent and no further comparability work is needed.", 0.9),
+    "TT-011": ("Compare in vitro drug release (IVRT) with a discriminating method, and check particle size distribution, which drives "
+               "release from a suspension. Then calculate f2 on the release profiles; f2 above 50 confirms the batches are equivalent.", 0.88),
+})
+
+
 def write_jsonl(path: Path, rows: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as fh:
