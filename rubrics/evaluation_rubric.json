@@ -1,0 +1,116 @@
+{
+  "rubric_version": "1.1.0",
+  "score_scale": {
+    "min": 1,
+    "max": 5
+  },
+  "dimensions": {
+    "scientific_regulatory_accuracy": {
+      "weight": 0.25,
+      "question": "Are the scientific, statistical and regulatory statements correct for the stated jurisdiction and dosage form?"
+    },
+    "grounding_and_citations": {
+      "weight": 0.15,
+      "question": "Are claims traceable to real, current, correctly cited sources (ICH, 21 CFR, FDA guidance, EU legislation, EU GMP, CTD sections)?"
+    },
+    "completeness": {
+      "weight": 0.15,
+      "question": "Does the answer cover every element a qualified MSAT / regulatory reviewer would expect?"
+    },
+    "regulatory_risk_judgement": {
+      "weight": 0.15,
+      "question": "Does the answer protect patient safety, product quality and data integrity, and avoid advice that would cause non-compliance?"
+    },
+    "relevance": {
+      "weight": 0.1,
+      "question": "Does the answer address the actual question, jurisdiction and dosage form?"
+    },
+    "instruction_following": {
+      "weight": 0.1,
+      "question": "Does the answer follow explicit format and content instructions (e.g. 'Recommended filing:' line, value labels)?"
+    },
+    "actionability": {
+      "weight": 0.1,
+      "question": "Could a practitioner act on the answer (clear next steps, documents, owners, decision points)?"
+    }
+  },
+  "severity_levels": {
+    "none": {
+      "rank": 0,
+      "auto_penalty": 0
+    },
+    "minor": {
+      "rank": 1,
+      "auto_penalty": 5
+    },
+    "major": {
+      "rank": 2,
+      "auto_penalty": 15
+    },
+    "critical": {
+      "rank": 3,
+      "auto_penalty": 40
+    }
+  },
+  "score_blend": {
+    "human_weight": 0.6,
+    "automated_weight": 0.4
+  },
+  "risk_matrix": {
+    "_comment": "Model risk = f(model influence, decision consequence), after the FDA (Jan 2025 draft) risk-based AI credibility framework.",
+    "low": {
+      "low": "low",
+      "medium": "low",
+      "high": "medium"
+    },
+    "medium": {
+      "low": "low",
+      "medium": "medium",
+      "high": "high"
+    },
+    "high": {
+      "low": "medium",
+      "medium": "high",
+      "high": "high"
+    }
+  },
+  "pass_thresholds": {
+    "low": {
+      "min_final_score": 70,
+      "max_allowed_severity": "major"
+    },
+    "medium": {
+      "min_final_score": 80,
+      "max_allowed_severity": "major"
+    },
+    "high": {
+      "min_final_score": 85,
+      "max_allowed_severity": "minor"
+    }
+  },
+  "disagreement_rules": {
+    "label_mismatch": true,
+    "severity_mismatch": true,
+    "dimension_score_range": 2,
+    "auto_human_critical_conflict": true
+  },
+  "release_gate": {
+    "fit": {
+      "min_pass_rate": 0.9,
+      "max_critical_findings": 0,
+      "min_consistency": 0.9,
+      "max_ece": 0.15,
+      "max_guidance_status_errors": 0
+    },
+    "conditional": {
+      "min_pass_rate": 0.75,
+      "max_critical_findings": 1
+    },
+    "drift_alert_drop": {
+      "pass_rate": 0.05,
+      "mean_final_score": 3.0
+    },
+    "_guidance_rule": "Only guidance effective on evaluation_as_of may be presented as a requirement. Drafts must be labelled and carry a way forward to adoption; withdrawn or superseded documents only as historical."
+  },
+  "evaluation_as_of": "2026-11-24"
+}
