@@ -53,6 +53,10 @@ def validate_all() -> dict:
             errors.append(f"registry {d['id']}: non-final document needs an adoption_path")
         if d.get("superseded_by") and d["superseded_by"] not in reg_ids:
             errors.append(f"registry {d['id']}: superseded_by {d['superseded_by']} not in registry")
+    from .graders.applicability import classify
+    for c in cases:
+        if c.computation and c.computation.kind == "f2" and classify(c.model_dump()) == "not_applicable":
+            errors.append(f"{c.case_id}: asks for f2 but dosage form '{c.dosage_form}' has no release profile")
     for c in cases:
         errors += [f"{c.case_id}: required_guidance {g} not in registry" for g in c.required_guidance if g not in reg_ids]
 
