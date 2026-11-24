@@ -27,6 +27,7 @@ CONFUSION = {
     "wrong_filing_category": "factual_error", "unsafe_recommendation": "factual_error",
     "misquoted_regulation": "fabricated_citation", "incomplete": "missing_critical_step",
     "calculation_error": "factual_error", "unit_error": "calculation_error",
+    "method_not_applicable": "factual_error",
 }
 LOWER = {"critical": "major", "major": "minor", "minor": "none", "none": "none"}
 
