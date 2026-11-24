@@ -1,8 +1,3 @@
-from .applicability import check_f2_applicability
-from .citations import check_citations
-from .content import check_abstention, check_forbidden, check_required_points, context_support_rate
-from .filing import check_filing
-from .numeric import check_numeric
+"""pharmaeval: evaluation benchmark for pharmaceutical technology-transfer and regulatory (USFDA / EU) AI models."""
 
-__all__ = ["check_f2_applicability", "check_citations", "check_abstention", "check_forbidden", "check_required_points",
-           "context_support_rate", "check_filing", "check_numeric"]
+__version__ = "1.2.0"
