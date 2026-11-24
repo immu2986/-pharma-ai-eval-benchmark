@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0] - 2026-11-24
+### Added
+- f2 applicability grader (`src/pharmaeval/graders/applicability.py`) with new error label `method_not_applicable`:
+  - f2 applied to solutions, monoclonal antibodies, biosimilars or peptide solutions = major (no release profile exists; use Q1/Q2 sameness, characterisation or ICH Q5E comparability);
+  - f2 applied to injectable suspensions, microspheres, liposomes, implants or in-situ gels without addressing its preconditions (85 % rule, variability) or the PSG's statistical method = minor.
+- Optional case field `release_comparison` (`applicable` / `conditional` / `not_applicable`); inferred from `dosage_form` when absent.
+- Validation rejects cases that ask for an f2 calculation on a dosage form with no release profile.
+- Test cases TT-010 (mAb solution site transfer) and TT-011 (medroxyprogesterone acetate injectable suspension).
+
 ## [1.1.0] - 2026-11-24
 ### Added
 - Guidance-status engine (`src/pharmaeval/guidance.py`) and dated registry (`knowledge/guidance_registry.json`, 25 documents).
